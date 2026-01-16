@@ -15,7 +15,7 @@ This project simulates a bug bounty workflow, focusing on reconnaissance and the
 
 **Findings:**
 Service enumeration was performed on the localhost target to identify running web services. The scan confirms port 80 is active.
-![Nmap Scan Results](images/Screenshot 2026-01-16 213859.png)
+![Nmap Scan Results](images/nmap.png)
 
 ---
 
@@ -31,7 +31,7 @@ The application fails to sanitize user input in the "What's your name?" field. T
 
 **Proof of Concept:**
 Payload: `<script>alert('Bounty101')</script>`
-![XSS PoC](images/Screenshot 2026-01-16 220930.png)
+![XSS PoC](images/xss.png)
 
 ---
 
@@ -45,7 +45,7 @@ The "User ID" input field is vulnerable to SQL Injection. By injecting the boole
 
 **Proof of Concept:**
 Payload: `' OR '1'='1`
-![SQLi PoC](images/screencapture-localhost-vulnerabilities-sqli-2026-01-16-21_35_26.png)
+![SQLi PoC](images/sqli.png)
 
 ---
 
@@ -59,7 +59,7 @@ The "Ping a Device" feature takes a raw IP address and passes it to the system s
 
 **Proof of Concept:**
 Payload: `127.0.0.1 && cat /etc/passwd`
-![Command Injection PoC](images/screencapture-localhost-vulnerabilities-exec-2026-01-16-21_36_39.png)
+![Command Injection PoC](images/rce.png)
 
 ---
 
